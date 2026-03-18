@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LGKRSC Coffee Shop</title>
+</head>
+
+<style>
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    
+  }
+
+  @media (max-width:1024px){
+  
+  .kumpulanhero{
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  }
+  
+  #gambar{
+  width:150px;
+  padding:20px 0;
+  }
+  
+  .kumpulanabout{
+  flex-direction: column;
+  text-align:center;
+  }
+  
+  .kumpulanriviews{
+  flex-direction: column;
+  }
+
+  }
+  
+  @media (max-width:768px){
+
+  .navbar{
+  flex-direction: column;
+  gap:10px;
+  }
+  
+  .nav-links{
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  
+  .hero{
+  text-align: center;
+  }
+  
+  .kumpulankopipouler{
+  grid-template-columns: 1fr;
+  }
+  
+  .kumpulanmenu{
+  grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .kumpulaninfo{
+  flex-direction: column;
+  gap:20px;
+  }
+  
+  .kumpulanfooter{
+  flex-wrap: wrap;
+  gap:20px;
+  justify-content: center;
+  }
+  
+  }
+  
+  @media (max-width:480px){
+  
+  body{
+  font-size:14px;
+  }
+  
+  .navbar{
+  padding:10px;
+  }
+  
+  h1{
+  font-size:24px;
+  }
+  
+  h2{
+  font-size:20px;
+  }
+  
+  #gambar{
+  width:120px;
+  }
+  
+  #menupopular{
+  font-size:20px;
+  }
+  
+  .kumpulanmenu{
+  grid-template-columns: 1fr;
+  }
+  
+  .kumpulanhero{
+  padding:20px 10px;
+  }
+  
+  .content{
+  padding:5px;
+  }
+  
+  .content1{
+  min-height: 100vh;
+  display: flex;
+  }
+  
+  }
+
+  html{
+    scroll-behavior: Smooth;
+  }
+
+  :root {
+    --primary: #6F4E37;
+    --dark: #3E2723;
+    --cream: #F5F5DC;
+    --light: #FFF8E1;
+    --text: #333333;
+    --accent: #D7CCC8;
+  }
+
+  /* 2. RESET / GLOBAL */
+  body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    font-size: 16px;
+  }
+  
+  h1,h2,h3{
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    background: var(--dark);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .nav-links{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover{
+    color: var(--cream);
+  }
+  
+  .kumpulanhero{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 5%;
+  }
+  
+  .hero{
+    max-width: 500px;
+  }
+  
+  .content{
+    scroll-margin-top: 80px;
+  }
+  
+  #gambar img{
+    width: 130px;
+    padding: 90px 0px 0px 0px;
+  }
+  
+  .btn{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    background: var(--dark);
+  }
+  
+  .btn:hover{
+    background-color: var(--primary);
+    transition: 0.2s ease;
+    transform: scale(1.05);
+  }
+  
+  .btn1{
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  #menupopular{
+    text-align: center;
+  }
+  
+  .price{
+    font-weight: bold;
+    color: var(--white);
+  }
+
+  /* 4. MENU CARD */
+  .box{
+    background: var(--primary);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    color: white;
+  }
+  
+  .box1{
+    background: var(--primary);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .box img{
+    width: 100px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid white;
+  }
+  
+  .box1 img{
+    width: 100px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid white;
+  }
+  
+  .kumpulankopipouler{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    gap: 5px;
+    text-align: center;
+    color: white;
+  }
+  
+  .menu-card{
+    background: var(--primary);
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    transition: 0.3s;
+    color: white;
+  }
+
+  .menu-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .menu-card img{
+    width: 100px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid white;
+  }
+  
+  .kumpulanmenu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    gap: 5px;
+    row-gap: 6px;
+    color: white
+  }
+  
+  #gambarcafe{
+    width: 150px;
+    border-radius: 2px;
+  }
+  
+  .kumpulanabout{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* 5. BUTTON */
+  .btn {
+    background: var(--dark);
+    color: white;
+    border: none;
+    font-size: 20px;
+  }
+  
+  .reviews{
+    background: var(--primary);
+    border-radius: 5px;
+    padding: 5px;
+    color: white
+  }
+  
+  .kumpulanreviews{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 10px;
+  }
+  
+  .kumpulaninfo{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: var(--cream);
+    border: 1px solid var(--accent);
+  }
+  
+  /* 6. FOOTER */
+  .footer a{
+    color: var(--cream);
+    text-decoration: none;
+  }
+  
+  .footer i{
+    font-size: 20px;
+  }
+  
+  .kumpulanfooter{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    text-align: center;
+    background: var(--dark);
+    color: var(--cream);
+  }
+  
+  .divider{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+  }
+  
+  .divider::before,
+  .divider::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--text);
+  }
+  
+  .divider span{
+    padding: 0 10px;
+    font-size: 14px;
+  }
+  
+  #pesanan{
+    text-align: center;
+  }
+  
+  #Order{
+    padding: 20px;
+    background: var(--primary);
+    color: white;
+    margin: 20px;
+    border-radius: 5px;
+  }
+  
+  #menu{
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background: white;
+  }
+  
+  #order{
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background: white;
+  }
+  
+  #pembayaran{
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background: white;
+  }
+  
+  .form{
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  .formorder{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  #alamatField{
+    display: none;
+  }
+  
+  #nomorField{
+    display: none;
+  }
+  
+  #norekField{
+    display: none;
+  }
+  
+  .cntr{
+    text-align: center;
+  }
+  
+  #popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #popup button{
+    font-size: 20px;
+  }
+  
+  #dar{
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    margin: 20px;
+    font-size: 20px;
+  }
+  
+  p button{
+    font-size: 20px;
+  }
+  
+  /* Ubah bagian ini di CSS lu */
+  
+  #popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #popuppembayaran {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    
+    /* Pakai flex di sini untuk nengahin segalanya */
+    display: none; /* Akan diubah jadi flex via JS */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  #popupbos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  #popupcontent {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    
+    /* Lebar proporsional */
+    width: 100%;
+    max-width: 450px; 
+    
+    /* Pastikan box tidak geser */
+    margin: auto;
+    
+    font-size: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .popupbayar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee; /* Kasih garis biar kayak struk */
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+
+  /* Tambahan biar teks kiri kanan gak dempet banget */
+  .popupbayar p {
+    margin: 10px 0;
+  }
+
+  #popupcontent h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--dark);
+  }
+
+  #popupcontent .btn {
+    width: 100%; /* Tombol konfirmasi jadi lebar biar mantap */
+    margin-top: 20px;
+    padding: 12px;
+  }
+
+  #popupcontent {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #popup{
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+</style>
+
+<body>
+  <div class="navbar">
+    <div class="logo">LGKRSC Fresh Coffee</div>
+    <ul class="nav-links">
+      <li><a href="#Home">Home</a></li>
+      <li><a href="#Menu">Menu</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#Contact">Contact</a></li>
+      <li><a href="#Order">Order</a></li>
+      <li><a href="adminlogin.html">AdminLogin</a></li>
+    </ul>
+  </div>
+  
+  <section class="content1" id="Home">
+    <div class="container">
+      <div class="kumpulanhero">
+        <div class="hero">
+          <h1>LGKRSC FRESH COFFEE</h1>
+          <p>Start your day with our premium coffee beans.</p>
+          <a href="#Menu" class="btn">See Menu</a>
+        </div>
+        
+        <div id="gambar">
+          <img src="kopi.png" alt="gambarkopi">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content">
+    <div class="container">
+      <h2 id="menupopular">☆ Popular Coffee</h2>
+      <div class="kumpulankopipouler">
+        <div class="box">
+          <img src="latte.jpg" alt="">
+          <h3>Latte</h3>
+          <p>Smooth espresso blended with steamed milk
+          for a creamy and balanced flavor.</p>
+          <span class="price">28.000</span>
+        </div>
+        
+        <div class="box">
+          <img src="cappucino.jpg" alt="">
+          <h3>Cappuccino</h3>
+          <p>Rich espresso topped with thick milk foam
+          for a bold yet creamy taste.</p>
+          <span class="price">28.000</span>
+        </div>
+      </div>
+        <div class="box1">
+          <img src="espresso.jpg" alt="">
+          <h3>Espresso</h3>
+          <p>Strong and bold coffee shot
+          with intense aroma and flavor.</p>
+          <span class="price">20.000</span>
+        </div>
+    </div>
+  </section>
+  
+  <section class="content" id="Menu">
+    <div class="container">
+      <h2 id="menupopular">Our Menu</h2>
+      <div class="kumpulanmenu">
+        <div class="menu-card">
+          <img src="espresso.jpg" alt="">
+          <h3>Espresso</h3>
+          <hr>
+          <p>Strong and bold coffee shot with rich aroma.</p>
+          <span class="price">20.000</span>
+        </div>
+        
+        <div class="menu-card">
+          <img src="americano.jpg" alt="">
+          <h3>Americano</h3>
+          <hr>
+          <p>Espresso mixed with hot water for a smoother taste.</p>
+          <span class="price">22.000</span>
+        </div>
+        
+        <div class="menu-card">
+          <img src="latte.jpg" alt="">
+          <h3>Latte</h3>
+         <hr> 
+          <p>Smooth espresso blended with creamy steamed milk.</p>
+          <span class="price">28.000</span>
+        </div>
+        
+        <div class="menu-card">
+          <img src="mocha.jpg" alt="">
+          <h3>Mocha</h3>
+          <hr>
+          <p>Chocolate flavored coffee with milk and espresso.</p>
+          <span class="price">30.000</span>
+        </div>
+        
+        <div class="menu-card">
+          <img src="caramellatte.jpg" alt="">
+          <h3>Caramel Latte</h3>
+          <hr>
+          <p>Espresso mixed with steamed milk and sweet caramel flavor.</p>
+          <span class="price">Rp30.000</span>
+        </div>
+        
+        <div class="menu-card">
+          <img src="cappucino.jpg" alt="">
+          <h3>Cappuccino</h3>
+          <hr>
+          <p>Rich espresso topped with thick milk foam for a bold yet creamy taste.</p>
+          <span class="price">Rp28.000</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content" id="About">
+    <div class="container">
+      <h2 id="menupopular">About Our Coffee Shop</h2>
+      <div class="kumpulanabout">
+        <img src="lgkrsc.png" alt="CoffeeShop" id="gambarcafe">
+        <p>Since 2009, we have served the finest coffee from around the world.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content">
+    <div class="container">
+      <span class="divider">
+        <h2>Reviews</h2>
+      </span>
+      <div class="kumpulanreviews">
+        <div class="reviews">
+          <p>☆☆☆☆☆</p>
+          <p>"Great coffee and cozy place."</p>
+          <p>-Robin</p>
+        </div>
+        
+        <div class="reviews">
+          <p>☆☆☆☆☆</p>
+          <p>"Love the atmosphere here."</p>
+          <p>-Dudeko</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content" id="Contact">
+    <div class="container">
+      <div class="kumpulaninfo">
+        <div class="infolanjut">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Mojowatesrejo</p>
+        </div>
+        
+        <div class="infolanjut">
+          <i class="fa-solid fa-clock"></i>
+          <p>08:00 - 22:00</p>
+        </div>
+        
+        <div class="infolanjut">
+          <i class="fa-solid fa-phone"></i> 
+          <p>0812-3456-7890</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="content" id="Order">
+    <h2 id="pesanan">Order Here</h2>
+    <p class="form">
+      <label for="formnih" >Nama</label><br>
+      <input type="text" id="nama" class="formorder" placeholder="Masukan Nama Lengkap">
+    </p>
+    
+    <p class="form">
+      <label for="formnih">Menu</label><br>
+      <select id="menu">
+        <option value="">Pilih Menu</option>
+        <option value="Espresso">Espresso</option>
+        <option value="Latte">Latte</option>
+        <option value="Cappuccino">Cappucino</option>
+        <option value="Americano">Americano</option>
+        <option value="Mocha">Mocha</option>
+        <option value="Caramel_latte">Caramel Latte</option>
+      </select>
+    </p>
+    
+    <p class="form">
+      <label for="formnih">Pilihan Order</label><br>
+      <select id="order" onchange="showForm()">
+        <option value="">Pilih Order</option>
+        <option value="TakeAway">Take Away</option>
+        <option value="Dine-In">Dine-In</option>
+        <option value="Delivery">Delivery</option>
+      </select>
+    </p>
+    
+    <p class="form">
+      <label for="formnih">Pilihan Metode Pembayaran</label><br>
+      <select id="pembayaran" onchange="handlePembayaran()">
+        <option value="">Pilih Metode</option>
+        <option value="Dana">Dana</option>
+        <option value="BCA">BCA</option>
+        <option value="BRI">BRI</option>
+      </select>
+    </p>
+    
+    <p class="form" id="alamatField">
+      <label for="formnih">Alamat</label><br>
+      <input type="text" id="alamat" class="formorder" placeholder="Masukan Alamat Lengkap">
+    </p>
+    
+    <p class="nomor" id="nomorField">
+      <label for="nomornih">Nomor</label><br>
+      <input type="text" id="nomor" class="formorder"
+      placeholder="Masukan Nomor">
+    </p>
+    
+    <p id="rekeningInfo" style="display:none;">
+      <strong>Transfer ke:</strong><br>
+      BCA: 1234567890 (a.n. LGKRSC Coffee)<br>
+      BRI: 0987654321 (a.n. LGKRSC Coffee)
+    </p>
+    
+    <p id="error" style="color:red; text-align:center;"></p>
+    
+    <p class="cntr" id="dor">
+      <button class="btn" onclick="submitForm()">Submit</button>
+    </p>
+  </section>
+  
+  <footer>
+    <div class="kumpulanfooter">
+      <div class="footer">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <p>Instagram</p>
+      </div>
+      
+      <div class="footer">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <p>Facebook</p>
+      </div>
+      
+      <div class="footer">
+        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        <p>Email</p>
+      </div>
+      
+      <div class="footer">
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <p>WhatsApp</p>
+      </div>
+    </div>
+  </footer>
+  
+  <div id="popuppembayaran">
+    <div id="popupbos">
+      <div id="popupcontent">
+        <h4>Konfirmasi Pembayaran</h4>
+        <p><strong>Silakan transfer lalu klik konfirmasi</strong></p>
+        <div class="popupbayar">
+          <p>Nama</p>
+          <p id="namapembayaran"></p>
+        </div>
+        
+        <div class="popupbayar">
+          <p>Items</p>
+          <p id="itemspembayaran"></p>
+        </div>
+        
+        <div class="popupbayar">
+          <p>Metode Order</p>
+          <p id="metodeorder"></p>
+        </div>
+        
+        <div class="popupbayar">
+          <p>Metode Pembayaran</p>
+          <p id="metodepayment"></p>
+        </div>
+        
+        <div class="popupbayar">
+          <p>Alamat</p>
+          <p id="alamatpembayaran"></p>
+        </div>
+        
+        <div class="popupbayar">
+          <p>Total</p>
+          <p id="hargapembayaran"></p>
+        </div>
+        <button class="btn" onclick="closePopup()">Konfirmasi</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="popup">
+    <div id="dar">
+    <h4>Pesanan Berhasil Dikirim!!!</h4>
+    <p>Terimakasih sudah order</p>
+    <button class="btn" onclick="closeAllPopup()">Tutup</button>
+    </div>
+  </div>
+  
+</body>
+
+<script>
+  function showPopup(){
+    document.getElementById("popuppembayaran").style.display = "flex";
+  }
+
+  function closePopup(){
+    document.getElementById("popuppembayaran").style.display = "none";
+    document.getElementById("popup").style.display = "flex";
+  }
+  
+  function closeAllPopup(){
+    document.getElementById("popup").style.display = "none";
+  }
+  
+  function submitForm(){
+  let nama = document.getElementById("nama").value.trim();
+  let menu = document.getElementById("menu").value;
+  let order = document.getElementById("order").value;
+  let metodepembayaran = document.getElementById("pembayaran").value;
+  let alamat = document.getElementById("alamat").value.trim();
+  let nomor = document.getElementById("nomor").value.trim();
+  
+  let harga = 0;
+  if(menu === "Espresso") harga = 20000;
+  else if(menu === "Americano") harga = 22000;
+  else if(menu === "Latte") harga = 28000;
+  else if(menu === "Mocha") harga = 30000;
+  else if(menu === "Caramel_latte") harga = 30000;
+  else if(menu === "Cappuccino") harga = 28000;
+  
+  const orderData = {
+      nama,
+      menu,
+      order,
+      metodepembayaran,
+      alamat,
+      nomor,
+      harga,
+    };
+    let allOrders = 
+  JSON.parse(localStorage.getItem("orders")) || [];
+  
+    allOrders.push(orderData);
+    
+    localStorage.setItem("orders",
+  JSON.stringify(allOrders));
+
+  document.getElementById("hargapembayaran").innerText = "Rp " + harga.toLocaleString('id-ID');
+    
+  if(nama === "" || menu === "" || order === "" || (order === "Delivery" && alamat === "") || metodepembayaran === "Dana" && nomor === ""){
+    document.getElementById("error").innerText = "Semua form wajib diisi!";
+    return;
+  
+  document.getElementById("popuppembayaran").style.display = "flex";
+  }
+  
+
+  document.getElementById("error").innerText = "";
+  
+  document.getElementById("namapembayaran").innerText = nama;
+  document.getElementById("itemspembayaran").innerText = menu;
+  document.getElementById("metodeorder").innerText = order;
+  document.getElementById("metodepayment").innerText = metodepembayaran;
+  document.getElementById("alamatpembayaran").innerText = alamat || "-";
+
+  
+    
+    document.getElementById("popuppembayaran").style.display = "flex";
+  }
+  
+  function showForm(){
+    let order = document.getElementById("order").value;
+    let alamatField = document.getElementById("alamat").parentElement;
+  
+    if(order === "Delivery"){
+      alamatField.style.display = "block";
+    } else {
+      alamatField.style.display = "none";
+    }
+  }
+  
+  function showNomor(){
+    let metodepembayaran = document.getElementById("pembayaran").value;
+    let nomorField = document.getElementById("nomor").parentElement;
+    
+    if(metodepembayaran === "Dana"){
+      nomorField.style.display = "block";
+    } else {
+      nomorField.style.display = "none";
+    }
+  }
+  
+  function handlePembayaran(){
+    let metode = document.getElementById("pembayaran").value;
+    let nomorField = document.getElementById("nomorField");
+    let rekeningInfo = document.getElementById("rekeningInfo");
+  
+    if(metode === "Dana"){
+      nomorField.style.display = "block";
+      rekeningInfo.style.display = "none";
+    } 
+    else if(metode === "BCA" || metode === "BRI"){
+      nomorField.style.display = "none";
+      rekeningInfo.style.display = "block";
+    } 
+    else {
+      nomorField.style.display = "none";
+      rekeningInfo.style.display = "none";
+    }
+  }
+  
+  
+</script>
+
+</html>
